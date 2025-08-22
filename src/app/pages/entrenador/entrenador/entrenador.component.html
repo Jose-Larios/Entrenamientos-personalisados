@@ -1,0 +1,21 @@
+<ion-menu contentId="main-content">
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <ion-button [routerLink]="['verDeportistas']">Ver deportistas</ion-button>
+      <ion-button [routerLink]="['/entrenadores']">Ver perfil</ion-button>
+      <ion-button color="danger" (click)="logout()" [routerLink]="['/']"
+        >Cerrar sesion</ion-button
+      >
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <ion-content class="ion-padding">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+</div>

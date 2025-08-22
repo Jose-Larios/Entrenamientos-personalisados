@@ -1,0 +1,89 @@
+:host {
+  ion-toolbar {
+    --background: #001f36;
+    --color: #fbffcd;
+    text-align: center;
+
+    ion-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  ion-content {
+    --background: #000000;
+    padding: 1rem;
+
+    ion-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #79ae92;
+      margin: 1.5rem 0 1rem;
+      text-align: center;
+    }
+
+    ion-accordion-group {
+      background: transparent;
+      margin-bottom: 2rem;
+
+      ion-accordion {
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        background: #1c5560;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+        ion-item {
+          --background: #001f36;
+          --color: #fbffcd;
+          font-weight: 600;
+
+          ion-label {
+            font-size: 1rem;
+          }
+        }
+
+        div[slot="content"] {
+          background: #1c5560;
+          color: #fbffcd;
+          font-size: 0.95rem;
+          line-height: 1.4;
+          padding: 1rem 1.2rem;
+
+          p {
+            margin: 0.3rem 0;
+
+            b {
+              color: #79ae92;
+            }
+          }
+
+          ion-button {
+            --background: #79ae92;
+            --color: #001f36;
+            --border-radius: 10px;
+            font-weight: 600;
+            margin-top: 0.8rem;
+            margin-right: 0.5rem;
+            transition: 0.3s ease;
+
+            &:hover {
+              --background: #fbffcd;
+              --color: #000000;
+            }
+
+            &[color="danger"] {
+              --background: #b33939;
+              --color: #fbffcd;
+
+              &:hover {
+                --background: #ff5252;
+                --color: #000000;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<ion-toolbar>
+  <ion-title>Crear rutina</ion-title>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <h5>Ejercicios disponible</h5>
+
+  <label>Elige el musculo que se trabajara</label>
+  <select name="tipoEjercicio" id="tipoEjercicio" required>
+    <option value="abdominals">Abs</option>
+    <option value="abductors">Abductors</option>
+    <option value="biceps">Biceps</option>
+    <option value="calves">Pantorrillas</option>
+    <option value="chest">Pecho</option>
+    <option value="forearms">Antebrazos</option>
+    <option value="glutes">Gluteos</option>
+    <option value="hamstrings">Isquiotibiales</option>
+    <option value="lats">Dorsales</option>
+    <option value="lower_back">Espalda baja</option>
+    <option value="middle_back">Espalda media</option>
+    <option value="neck">Cuello</option>
+    <option value="quadriceps">Cuádriceps</option>
+    <option value="traps">Trapecios</option>
+    <option value="triceps">Triceps</option>
+  </select>
+  <hr />
+  <label>Seleccione el dia de la rutina</label>
+  <select name="dia" id="dia" [(ngModel)]="dia">
+    <option value="lunes">Lunes</option>
+    <option value="martes">Martes</option>
+    <option value="miercoles">Miercoles</option>
+    <option value="jueves">Jueves</option>
+    <option value="viernes">Viernes</option>
+    <option value="sabado">Sabado</option>
+  </select>
+  <hr />
+  <ion-button (click)="cargarEjercicios()">Cargar Ejercicios</ion-button>
+
+  <ion-list>
+    <div *ngIf="ejercicios.length > 0">
+      <form #rutinaForm="ngForm" (ngSubmit)="crearRutina(rutinaForm)">
+        <ion-item *ngFor="let ejercicio of ejercicios">
+          <ion-label>
+            <h2>{{ ejercicio.name }}</h2>
+            <p>{{ ejercicio.type }} - {{ ejercicio.muscle }}</p>
+            <p>{{ ejercicio.difficulty }}</p>
+            <label for="repeticiones">Repeticiones</label>
+            <input #repeticiones type="text" required />
+            <hr />
+            <label for="series">Series</label>
+            <input #series type="text" required />
+            <hr />
+            <label for="tiempoDescanso">Tiempo de descanso</label>
+            <input #tiempoDescanso type="text" required />
+            <hr />
+          </ion-label>
+          <ion-checkbox
+            slot="end"
+            [checked]="saberEjercicioSeleccionado(ejercicio)"
+            (ionChange)="
+              seleccionarEjercicio(
+                ejercicio,
+                repeticiones.value,
+                series.value,
+                tiempoDescanso.value,
+                $event.detail.checked
+              )
+            "
+          >
+          </ion-checkbox>
+        </ion-item>
+        <!-- (click)="alertUsuarioCreado()" -->
+        <ion-button color="success" type="submit">
+          Guardar ejercicios seleccionados</ion-button
+        >
+      </form>
+    </div>
+  </ion-list>
+</ion-content>

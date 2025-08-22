@@ -1,0 +1,89 @@
+<ion-toolbar>
+  <ion-title>Registros completos</ion-title>
+</ion-toolbar>
+<hr />
+
+<ion-content>
+  <ion-title>Administradores registrados</ion-title>
+  <ion-accordion-group expand="inset">
+    <ion-accordion *ngFor="let admin of adminData" [value]="admin.nombre">
+      <ion-item slot="header" color="light">
+        <ion-label>{{ admin.nombre }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Nombre: {{ admin.nombre }}</p>
+        <p>Apellidos: {{ admin.apellidos }}</p>
+        <p>Correo: {{ admin.correo }}</p>
+        <p>Edad: {{ admin.edad }}</p>
+        <p>Telefono: {{ admin.telefono }}</p>
+        <ion-button (click)="actualizarAdmin(admin)"
+          >Actualizar información</ion-button
+        >
+        <ion-button color="danger" (click)="eliminarUsuario('admin', admin.id)"
+          >Eliminar usuario</ion-button
+        >
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-title>Entrenadores registrados</ion-title>
+  <ion-accordion-group expand="inset">
+    <ion-accordion
+      *ngFor="let entrenador of entrenadorData"
+      [value]="entrenador.nombre"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label>{{ entrenador.nombre }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Nombre: {{ entrenador.nombre }}</p>
+        <p>Apellidos: {{ entrenador.apellidos }}</p>
+        <p>Correo: {{ entrenador.correo }}</p>
+        <p>Edad: {{ entrenador.edad }}</p>
+        <p>Telefono: {{ entrenador.telefono }}</p>
+        <p>Grado de estudios: {{ entrenador.gradoEstudio }}</p>
+        <p>Lugar de estudios: {{ entrenador.lugarEstudio }}</p>
+        <ion-button (click)="actualizarEntrenador(entrenador)"
+          >Actualizar información</ion-button
+        >
+        <ion-button
+          color="danger"
+          (click)="eliminarUsuario('entrenadores', entrenador.id)"
+          >Eliminar usuario</ion-button
+        >
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+
+  <ion-title>Deportistas registrados</ion-title>
+  <ion-accordion-group expand="inset">
+    <ion-accordion
+      *ngFor="let deportista of deportistasData"
+      [value]="deportista.nombre"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label>{{ deportista.nombre }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Nombre: {{ deportista.nombre }}</p>
+        <p>Apellidos: {{ deportista.apellidos }}</p>
+        <p>Correo: {{ deportista.correo }}</p>
+        <p>Edad: {{ deportista.edad }}</p>
+        <p>Telefono: {{ deportista.telefono }}</p>
+        <p>Telefono de emergencia: {{ deportista.telefonoEmergencia }}</p>
+        <p>Enfermedades: {{ deportista.enfermedades }}</p>
+        <p>Otros: {{ deportista.otros }}</p>
+        <p>Objetivos: {{ deportista.objetivos }}</p>
+        <p>Estado de la suscripcion: {{ deportista.activo }}</p>
+        <ion-button (click)="actualizarDeportista(deportista)"
+          >Actualizar información</ion-button
+        >
+        <ion-button
+          color="danger"
+          (click)="eliminarUsuario('deportistas', deportista.id)"
+          >Eliminar usuario</ion-button
+        >
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

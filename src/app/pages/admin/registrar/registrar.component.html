@@ -1,0 +1,234 @@
+<ion-toolbar>
+  <ion-title>Registrar nuevos usuarios</ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <p>Seleccione el tipo de usuario desea registrar</p>
+
+  <ion-button (click)="mostrarFormulario('admin')">Administrador</ion-button>
+  <ion-button (click)="mostrarFormulario('entrenador')">Entrenador</ion-button>
+  <ion-button (click)="mostrarFormulario('deportista')">Deportista</ion-button>
+
+  <!-- Formulario para administradores -->
+  <div *ngIf="activarFormularioRegistro === 'admin'">
+    <h2>Formulario para ingresar administrativo</h2>
+    <form (ngSubmit)="agregarNuevoAdmin()">
+      <label for="nombre">Nombre</label>
+      <input
+        [(ngModel)]="nuevoAdmin.nombre"
+        name="nombre"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="apellidos">Apellidos</label>
+      <input
+        [(ngModel)]="nuevoAdmin.apellidos"
+        name="apellidos"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="correo">Correo</label>
+      <input
+        [(ngModel)]="nuevoAdmin.correo"
+        name="correo"
+        type="email"
+        required
+      />
+      <hr />
+      <label for="contra">Contraseña</label>
+      <input
+        [(ngModel)]="nuevoAdmin.contra"
+        name="contra"
+        type="password"
+        required
+      />
+      <hr />
+      <label for="edad">Edad</label>
+      <input [(ngModel)]="nuevoAdmin.edad" name="edad" type="tel" required />
+      <hr />
+      <label for="telefono">Teléfono</label>
+      <input
+        [(ngModel)]="nuevoAdmin.telefono"
+        name="telefono"
+        type="tel"
+        required
+      />
+      <hr />
+      <ion-button type="submit" (click)="alertUsuarioCreado()"
+        >Agregar</ion-button
+      >
+    </form>
+  </div>
+
+  <!-- Formulario para entrenador -->
+  <div *ngIf="activarFormularioRegistro === 'entrenador'">
+    <h2>Formulario para ingresar entrenador</h2>
+    <form (ngSubmit)="agregarNuevoEntrenador()">
+      <label for="nombre">Nombre</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.nombre"
+        name="nombre"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="apellidos">Apellidos</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.apellidos"
+        name="apellidos"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="correo">Correo</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.correo"
+        name="correo"
+        type="email"
+        required
+      />
+      <hr />
+      <label for="contra">Contraseña</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.contra"
+        name="contra"
+        type="password"
+        required
+      />
+      <hr />
+      <label for="edad">Edad</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.edad"
+        name="edad"
+        type="tel"
+        required
+      />
+      <hr />
+      <label for="telefono">Teléfono</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.telefono"
+        name="telefono"
+        type="tel"
+        required
+      />
+      <hr />
+      <label for="gradoEstudios">Grado de estudios</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.gradoEstudio"
+        name="gradoEstudio"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="lugarEstudios">Lugar donde estudió</label>
+      <input
+        [(ngModel)]="nuevoEntrenador.lugarEstudio"
+        name="lugarEstudio"
+        type="text"
+        required
+      />
+      <hr />
+      <ion-button type="submit" (click)="alertUsuarioCreado()"
+        >Agregar</ion-button
+      >
+    </form>
+  </div>
+
+  <!-- Formulario para deportista -->
+  <div *ngIf="activarFormularioRegistro === 'deportista'">
+    <h2>Formulario para ingresar deportista</h2>
+    <form (ngSubmit)="agregarNuevoDeportista()">
+      <label for="nombre">Nombre</label>
+      <input
+        [(ngModel)]="nuevoDeportista.nombre"
+        name="nombre"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="apellidos">Apellidos</label>
+      <input
+        [(ngModel)]="nuevoDeportista.apellidos"
+        name="apellidos"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="correo">Correo</label>
+      <input
+        [(ngModel)]="nuevoDeportista.correo"
+        name="correo"
+        type="email"
+        required
+      />
+      <hr />
+      <label for="contra">Contraseña</label>
+      <input
+        [(ngModel)]="nuevoDeportista.contra"
+        name="contra"
+        type="password"
+        required
+      />
+      <hr />
+      <label for="edad">Edad</label>
+      <input
+        [(ngModel)]="nuevoDeportista.edad"
+        name="edad"
+        type="tel"
+        required
+      />
+      <hr />
+      <label for="telefono">Teléfono</label>
+      <input
+        [(ngModel)]="nuevoDeportista.telefono"
+        name="telefono"
+        type="tel"
+        required
+      />
+      <hr />
+      <label for="telefonoEmergencia">Teléfono en caso de emergencia</label>
+      <input
+        [(ngModel)]="nuevoDeportista.telefonoEmergencia"
+        name="telefonoEmergencia"
+        type="tel"
+        required
+      />
+      <hr />
+      <label for="enfermedades">Enfermedades</label>
+      <input
+        [(ngModel)]="nuevoDeportista.enfermedades"
+        name="enfermedades"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="otros">Otros</label>
+      <input
+        [(ngModel)]="nuevoDeportista.otros"
+        name="otros"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="objetivos">Objetivos</label>
+      <input
+        [(ngModel)]="nuevoDeportista.objetivos"
+        name="objetivos"
+        type="text"
+        required
+      />
+      <hr />
+      <label for="activo">El usuario está activo</label>
+      <select [(ngModel)]="nuevoDeportista.activo" name="activo" required>
+        <option value="true">Sí</option>
+        <option value="false">No</option>
+      </select>
+      <hr />
+      <ion-button type="submit" (click)="alertUsuarioCreado()"
+        >Agregar</ion-button
+      >
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,100 @@
+:host {
+  ion-toolbar {
+    --background: #001f36;
+    --color: #fbffcd;
+    text-align: center;
+
+    ion-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+  }
+
+  ion-content {
+    --background: #000000;
+    padding: 1.5rem;
+    color: #fbffcd;
+
+    p {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1rem;
+      color: #79ae92;
+      font-weight: 500;
+    }
+
+    ion-button {
+      --background: #1c5560;
+      --color: #fbffcd;
+      --border-radius: 12px;
+      font-weight: 600;
+      margin: 0.5rem auto;
+      display: block;
+      width: 90%;
+      max-width: 350px;
+      text-transform: none;
+      transition: 0.3s ease;
+
+      &:hover {
+        --background: #79ae92;
+        --color: #001f36;
+      }
+    }
+
+    h2 {
+      color: #fbffcd;
+      font-size: 1.1rem;
+      text-align: center;
+      margin: 1.5rem 0;
+      font-weight: 600;
+    }
+
+    form {
+      background: #1c5560;
+      border-radius: 12px;
+      padding: 1rem 1.5rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+
+      label {
+        display: block;
+        margin-top: 1rem;
+        margin-bottom: 0.3rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #79ae92;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 0.6rem;
+        border: none;
+        border-radius: 8px;
+        background: #001f36;
+        color: #fbffcd;
+        font-size: 0.95rem;
+        outline: none;
+      }
+
+      input:focus,
+      select:focus {
+        border: 1px solid #79ae92;
+      }
+
+      hr {
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        margin: 1rem 0;
+      }
+
+      ion-button {
+        margin-top: 1.5rem;
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+<ion-toolbar>
+  <ion-title> Mi dieta</ion-title>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="recetas; else noDieta"></ng-container>
+  <div *ngFor="let comida of recetas">
+    <ion-card>
+      <img [src]="comida.strMealThumb" alt="Imagen de la receta" />
+      <ion-card-header>
+        <ion-card-title>{{ comida.strMeal }}</ion-card-title>
+        <ion-card-subtitle
+          >Categoria: {{ comida.strCategory }}</ion-card-subtitle
+        >
+      </ion-card-header>
+      <ion-card-content>
+        Ingredientes: {{ comida.strIngredient1 }},{{ comida.strIngredient2 }},{{
+          comida.strIngredient3
+        }},{{ comida.strIngredient4 }},{{ comida.strIngredient5 }},{{
+          comida.strIngredient6
+        }},{{ comida.strIngredient7 }},{{ comida.strIngredient8 }},{{
+          comida.strIngredient9
+        }},{{ comida.strIngredient10 }}. Insturcciones:
+        {{ comida.strInstructions }}
+
+        <a [href]="comida.strYoutube" target="_blank"
+          >Pulsa aca para ver un video:</a
+        >
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+
+<ng-template #noDieta>
+  <p>No tiene una dieta asignada</p>
+</ng-template>

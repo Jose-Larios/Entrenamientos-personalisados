@@ -1,0 +1,41 @@
+<ion-toolbar>
+  <ion-title> Mi rutina</ion-title>
+</ion-toolbar>
+<hr />
+
+<ion-content>
+  <ion-list *ngIf="diasRutina.length; else noRutina">
+    <ion-accordion-group>
+      <ion-accordion *ngFor="let rutina of diasRutina">
+        <ion-item slot="header">
+          <ion-label>{{ rutina.dia | titlecase }}</ion-label>
+        </ion-item>
+
+        <ion-list slot="content">
+          <ion-item *ngFor="let ejercicio of rutina.ejercicios">
+            <ion-label>
+              <h2>{{ ejercicio.name }}</h2>
+              <hr />
+              <p>
+                Series: {{ ejercicio.series }} | Reps:
+                {{ ejercicio.repeticiones }}
+              </p>
+              <hr />
+              <p>
+                Tiempo de descanso entre series: {{ ejercicio.tiempoDescanso }}
+              </p>
+              <hr />
+              <p>Instrucciones: {{ ejercicio.instructions }}</p>
+              <hr />
+              <p>Equipo: {{ ejercicio.equipment }}</p>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-accordion>
+    </ion-accordion-group>
+  </ion-list>
+
+  <ng-template #noRutina>
+    <p>No tiene una rutina asignada</p>
+  </ng-template>
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-menu contentId="main-content">
+  <ion-content class="ion-padding">
+    <ion-menu-toggle>
+      <ion-button [routerLink]="['registrar']">Registrar</ion-button>
+      <ion-button [routerLink]="['verRegistros']">Ver registros</ion-button>
+      <ion-button [routerLink]="['/administradores']">Mi perfil</ion-button>
+      <ion-button color="danger" (click)="logout()" [routerLink]="['/']">
+        Cerrar sesión
+      </ion-button>
+    </ion-menu-toggle>
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+  <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+  </ion-buttons>
+
+  <ion-content class="ion-padding">
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
+</div>

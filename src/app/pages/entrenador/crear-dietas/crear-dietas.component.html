@@ -1,0 +1,58 @@
+<ion-toolbar>
+  <ion-title> Dietas </ion-title>
+</ion-toolbar>
+
+<ion-content>
+  <select name="ingredientePrincipal" id="ingredientePrincipal">
+    <option value="chicken">Pollo</option>
+    <option value="salmon">Salmon</option>
+    <option value="beef">Carne de res</option>
+    <option value="pork">Carne de cerdo</option>
+    <option value="bacon">Tocino</option>
+    <option value="eggs">Huevo</option>
+    <option value="Beans">Flijores</option>
+    <option value="rice">Arroz</option>
+    <option value="spaghetti">Espagueti</option>
+    <option value="bread">Pan</option>
+    <option value="broccoli">Brocoli</option>
+    <option value="avocado">Aguacate</option>
+    <option value="almonds">Almendras</option>
+    <option value="walnuts">Nueces</option>
+    <option value="carrot">Zanahoria</option>
+  </select>
+  <ion-button (click)="cargarRecetas()">Cargar recetas</ion-button>
+
+  <ion-list>
+    <div *ngIf="recetas.length > 0">
+      <form #recetaForm="ngForm" (ngSubmit)="guardarDieta(recetaForm)">
+        <ion-item *ngFor="let receta of recetas; let i = index">
+          <ion-label>
+            <h2>{{ receta.strMeal }}</h2>
+            <img [src]="receta.strMealThumb" />
+          </ion-label>
+          <ion-button
+            [id]="'click-trigger-' + i"
+            (click)="cargarDetalleReceta(receta.idMeal)"
+            >Detalles</ion-button
+          >
+          <ion-popover [trigger]="'click-trigger-' + i" triggerAction="click">
+            <ng-template>
+              <ion-content class="ion-padding">
+                <h3>{{ detalleReceta?.strMeal }}</h3>
+                <p>{{ detalleReceta?.strInstructions }}</p></ion-content
+              >
+            </ng-template>
+          </ion-popover>
+          <ion-checkbox
+            slot="end"
+            [checked]="saberRecetaSeleccionada(receta)"
+            (ionChange)="seleccionarReceta(receta, $event.detail.checked)"
+          ></ion-checkbox>
+        </ion-item>
+        <ion-button color="success" type="submit">
+          Guardar ejercicios seleccionados</ion-button
+        >
+      </form>
+    </div>
+  </ion-list>
+</ion-content>

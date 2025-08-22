@@ -1,0 +1,28 @@
+<ion-content>
+  <ion-title>Deportista registrados</ion-title>
+  <ion-accordion-group expand="inset">
+    <ion-accordion
+      value="first"
+      *ngFor="let deportista of deportistasData"
+      [value]="deportista.nombre"
+    >
+      <ion-item slot="header" color="light">
+        <ion-label>{{ deportista.nombre }}</ion-label>
+      </ion-item>
+      <div class="ion-padding" slot="content">
+        <p>Nombre: {{ deportista.nombre }}</p>
+        <p>Apellidos: {{ deportista.apellidos }}</p>
+        <p>Edad: {{ deportista.edad }}</p>
+        <p>Enfermedades: {{ deportista.enfermedades }}</p>
+        <p>Otros: {{ deportista.otros }}</p>
+        <p>Objetivos: {{ deportista.objetivos }}</p>
+        <ion-button [routerLink]="['crearRutina', deportista.id]"
+          >Crear rutina</ion-button
+        >
+        <ion-button [routerLink]="['crearDieta', deportista.id]"
+          >Crear dieta</ion-button
+        >
+      </div>
+    </ion-accordion>
+  </ion-accordion-group>
+</ion-content>

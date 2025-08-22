@@ -1,0 +1,29 @@
+<ion-toolbar>
+  <ion-title> Mi Perfil</ion-title>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <ng-container *ngIf="usuario; else noUser">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title
+          >{{ usuario.nombre }} {{ usuario.apellidos }}</ion-card-title
+        >
+        <ion-card-subtitle>{{ usuario.correo }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        <p><b>Edad:</b> {{ usuario.edad }}</p>
+        <p><b>Telefono:</b> {{ usuario.telefono }}</p>
+        <p><b>TelefonoEmergencia:</b> {{ usuario.telefonoEmergencia }}</p>
+        <p><b>Enfermedades:</b> {{ usuario.enfermedades }}</p>
+        <p><b>Objetivos:</b> {{ usuario.objetivos }}</p>
+        <p><b>Otros:</b> {{ usuario.otros }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ng-container>
+
+  <ng-template #noUser>
+    <p>No hay usuario logueado</p>
+  </ng-template>
+</ion-content>
