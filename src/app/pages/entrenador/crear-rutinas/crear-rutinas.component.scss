@@ -1,0 +1,134 @@
+// 🎨 Paleta de colores
+$black: #000000;
+$blue-dark: #001f36;
+$blue-green: #1c5560;
+$green-soft: #79ae92;
+$yellow-light: #fbffcd;
+
+// 🔹 Toolbar
+ion-toolbar {
+  background: $blue-dark;
+  color: $yellow-light;
+  border-bottom: 2px solid $green-soft;
+
+  ion-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+}
+
+// 🔹 Contenido general
+ion-content {
+  background: $black;
+  color: $yellow-light;
+
+  label {
+    margin: 12px 0 6px;
+    font-weight: 600;
+    color: $green-soft;
+  }
+
+  select,
+  input {
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 12px;
+    border: 1px solid $green-soft;
+    border-radius: 8px;
+    background: $blue-green;
+    color: $yellow-light;
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: none;
+      border-color: $yellow-light;
+      box-shadow: 0 0 6px rgba($yellow-light, 0.6);
+    }
+  }
+
+  hr {
+    border: 0;
+    border-top: 1px solid rgba($yellow-light, 0.2);
+    margin: 12px 0;
+  }
+
+  h4 {
+    margin-top: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $yellow-light;
+    text-align: center;
+  }
+}
+
+.div-cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+// 🔹 Cards de ejercicios
+ion-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba($black, 0.5);
+  padding: 6px;
+  color: $yellow-light;
+  width: 30%; /* 90% del contenedor */
+  max-width: 400px; /* no crecer más de 400px */
+  margin: 10px auto; /* centrado horizontal */
+
+  ion-card-header {
+    border-bottom: 1px solid rgba($yellow-light, 0.2);
+    margin-bottom: 8px;
+
+    ion-card-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: $yellow-light;
+    }
+
+    ion-card-subtitle {
+      font-size: 0.9rem;
+      color: $green-soft;
+    }
+  }
+
+  ion-card-content {
+    font-size: 0.95rem;
+
+    p {
+      margin: 4px 0;
+      color: $yellow-light;
+    }
+
+    label {
+      margin-top: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: $green-soft;
+    }
+
+    input {
+      margin-top: 4px;
+    }
+  }
+}
+
+// 🔹 Botones
+ion-button {
+  --background: #002b34;
+  --background-activated: darken($green-soft, 10%);
+  --color: $blue-dark;
+  --border-radius: 10px;
+  margin: 8px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba($black, 0.4);
+
+  &:hover {
+    --background: lighten($green-soft, 5%);
+    --color: $yellow-light;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    border-radius: 10px;
+  }
+}

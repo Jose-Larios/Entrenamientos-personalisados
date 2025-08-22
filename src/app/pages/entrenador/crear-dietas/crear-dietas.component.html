@@ -30,48 +30,58 @@
 
   <ion-list>
     <div *ngIf="recetas.length > 0">
+      <h4>Recetas disponibles</h4>
       <form #recetaForm="ngForm" (ngSubmit)="guardarDieta(recetaForm)">
-        <ion-item *ngFor="let receta of recetas; let i = index">
-          <ion-label>
-            <h2>{{ receta.strMeal }}</h2>
+        <div class="div-cards">
+          <ion-card *ngFor="let receta of recetas; let i = index">
             <img [src]="receta.strMealThumb" />
-          </ion-label>
-          <ion-button
-            [id]="'click-trigger-' + i"
-            (click)="cargarDetalleReceta(receta.idMeal)"
-            >Detalles</ion-button
-          >
-          <ion-popover [trigger]="'click-trigger-' + i" triggerAction="click">
-            <ng-template>
-              <ion-content class="ion-padding">
-                <h3>{{ detalleReceta?.strMeal }}</h3>
-                <h4>Ingredientes</h4>
-                <ul>
-                  <li>{{ detalleReceta?.strIngredient1 }}</li>
-                  <li>{{ detalleReceta?.strIngredient2 }}</li>
-                  <li>{{ detalleReceta?.strIngredient3 }}</li>
-                  <li>{{ detalleReceta?.strIngredient4 }}</li>
-                  <li>{{ detalleReceta?.strIngredient5 }}</li>
-                  <li>{{ detalleReceta?.strIngredient6 }}</li>
-                  <li>{{ detalleReceta?.strIngredient7 }}</li>
-                  <li>{{ detalleReceta?.strIngredient8 }}</li>
-                  <li>{{ detalleReceta?.strIngredient9 }}</li>
-                  <li>{{ detalleReceta?.strIngredient10 }}</li>
-                </ul>
-                <h4>Intrucciones</h4>
-                <p>{{ detalleReceta?.strInstructions }}</p>
-                <a [href]="detalleReceta?.strYoutube" target="_blank"
-                  >Ver preparacion</a
-                >
-              </ion-content>
-            </ng-template>
-          </ion-popover>
-          <ion-checkbox
-            slot="end"
-            [checked]="saberRecetaSeleccionada(receta)"
-            (ionChange)="seleccionarReceta(receta, $event.detail.checked)"
-          ></ion-checkbox>
-        </ion-item>
+            <ion-card-header>
+              <ion-card-title>{{ receta.strMeal }}</ion-card-title>
+            </ion-card-header>
+
+            <ion-card-content>
+              <ion-button
+                [id]="'click-trigger-' + i"
+                (click)="cargarDetalleReceta(receta.idMeal)"
+                >Detalles</ion-button
+              >
+              <ion-popover
+                [trigger]="'click-trigger-' + i"
+                triggerAction="click"
+              >
+                <ng-template>
+                  <ion-content class="ion-padding">
+                    <h3>{{ detalleReceta?.strMeal }}</h3>
+                    <h4>Ingredientes</h4>
+                    <ul>
+                      <li>{{ detalleReceta?.strIngredient1 }}</li>
+                      <li>{{ detalleReceta?.strIngredient2 }}</li>
+                      <li>{{ detalleReceta?.strIngredient3 }}</li>
+                      <li>{{ detalleReceta?.strIngredient4 }}</li>
+                      <li>{{ detalleReceta?.strIngredient5 }}</li>
+                      <li>{{ detalleReceta?.strIngredient6 }}</li>
+                      <li>{{ detalleReceta?.strIngredient7 }}</li>
+                      <li>{{ detalleReceta?.strIngredient8 }}</li>
+                      <li>{{ detalleReceta?.strIngredient9 }}</li>
+                      <li>{{ detalleReceta?.strIngredient10 }}</li>
+                    </ul>
+                    <h4>Intrucciones</h4>
+                    <p>{{ detalleReceta?.strInstructions }}</p>
+                    <a [href]="detalleReceta?.strYoutube" target="_blank"
+                      >Ver preparacion</a
+                    >
+                  </ion-content>
+                </ng-template>
+              </ion-popover>
+              <hr />
+              <ion-checkbox
+                slot="end"
+                [checked]="saberRecetaSeleccionada(receta)"
+                (ionChange)="seleccionarReceta(receta, $event.detail.checked)"
+              ></ion-checkbox>
+            </ion-card-content>
+          </ion-card>
+        </div>
         <ion-button color="success" type="submit" (click)="alertaDietaCreada()">
           Guardar comidas seleccionados</ion-button
         >

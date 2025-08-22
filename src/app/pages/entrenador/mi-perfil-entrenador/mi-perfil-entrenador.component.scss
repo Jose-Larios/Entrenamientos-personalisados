@@ -1,0 +1,77 @@
+// Paleta de colores
+$black: #000000;
+$blue-dark: #001f36;
+$blue-green: #1c5560;
+$green-soft: #79ae92;
+$yellow-light: #fbffcd;
+
+// Estilos generales (aplicable en todas las páginas)
+ion-toolbar.profile-toolbar {
+  background: $blue-dark;
+  color: $yellow-light;
+  text-align: center;
+  border-bottom: 2px solid $green-soft;
+
+  ion-title {
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+  }
+}
+
+.profile-content {
+  background: $black;
+  color: $yellow-light;
+  min-height: 100%;
+}
+
+// Card del perfil
+.profile-card {
+  background: $blue-green;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba($black, 0.4);
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 500px;
+  color: $yellow-light;
+
+  ion-card-header {
+    border-bottom: 1px solid rgba($yellow-light, 0.2);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+
+  .profile-name {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: $yellow-light;
+  }
+
+  .profile-email {
+    font-size: 0.9rem;
+    color: $green-soft;
+  }
+
+  ion-card-content {
+    p {
+      font-size: 0.95rem;
+      margin: 6px 0;
+      line-height: 1.4;
+
+      span {
+        font-weight: bold;
+        color: $yellow-light;
+        margin-right: 6px;
+      }
+    }
+  }
+}
+
+// Texto cuando no hay usuario
+.no-user {
+  text-align: center;
+  color: $green-soft;
+  font-size: 1rem;
+  margin-top: 40px;
+  opacity: 0.8;
+}

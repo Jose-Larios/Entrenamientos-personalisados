@@ -1,0 +1,98 @@
+// 🎨 Paleta
+$black: #000000;
+$blue-dark: #001f36;
+$blue-green: #1c5560;
+$green-soft: #79ae92;
+$yellow-light: #fbffcd;
+
+// 🔹 Toolbar
+ion-toolbar {
+  background: linear-gradient(135deg, $blue-dark, $blue-green);
+  color: $yellow-light;
+  border: none;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}
+
+// 🔹 Fondo general
+ion-content {
+  --background: $blue-dark;
+  padding: 20px;
+
+  h4 {
+    color: $yellow-light;
+    margin: 16px 0;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+// 🔹 Estilo del acordeón de rutina
+ion-accordion-group {
+  background: transparent;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+ion-accordion {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+
+  ion-item[slot="header"] {
+    --background: $blue-green;
+    --color: $yellow-light;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  ion-list[slot="content"] {
+    background: #ffffff;
+    padding: 10px;
+
+    ion-item {
+      --background: #ffffff;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+      align-items: flex-start;
+      border-radius: 8px;
+      margin-bottom: 8px;
+
+      ion-label {
+        h2 {
+          font-size: 1rem;
+          font-weight: 600;
+          color: $blue-dark;
+          margin-bottom: 6px;
+        }
+
+        p {
+          font-size: 0.9rem;
+          color: $black;
+          margin: 6px 0;
+        }
+
+        hr {
+          border: none;
+          border-top: 1px solid rgba(0, 0, 0, 0.08);
+          margin: 8px 0;
+        }
+      }
+    }
+  }
+}
+
+// 🔹 Mensaje sin rutina
+.no-rutina {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: $yellow-light;
+  opacity: 0.85;
+}

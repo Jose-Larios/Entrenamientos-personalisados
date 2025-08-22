@@ -5,8 +5,8 @@
 <ion-content class="ion-padding">
   <h4>Estas son tus comidas recomendadas</h4>
   <ng-container *ngIf="recetas; else noDieta"></ng-container>
-  <div *ngFor="let comida of recetas">
-    <ion-card>
+  <div class="div-cards">
+    <ion-card *ngFor="let comida of recetas">
       <img [src]="comida.strMealThumb" alt="Imagen de la receta" />
       <ion-card-header>
         <ion-card-title>{{ comida.strMeal }}</ion-card-title>

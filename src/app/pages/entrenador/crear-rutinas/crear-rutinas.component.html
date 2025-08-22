@@ -39,45 +39,46 @@
       <h4>Ejercicio disponibles</h4>
       <hr />
       <form #rutinaForm="ngForm" (ngSubmit)="crearRutina(rutinaForm)">
-        <ion-item *ngFor="let ejercicio of ejercicios">
-          <ion-label>
-            <h2>{{ ejercicio.name }}</h2>
-            <p>Tipo: {{ ejercicio.type }}</p>
-            <p>Musculo que trabaja: {{ ejercicio.muscle }}</p>
-            <p>Dificultad: {{ ejercicio.difficulty }}</p>
-            <hr />
-            <h2>Ingrese los siguientes datos</h2>
-            <hr />
-            <label for="repeticiones">Repeticiones </label>
-            <input #repeticiones type="text" required />
-            <hr />
-            <label for="series">Series </label>
-            <input #series type="text" required />
-            <hr />
-            <label for="tiempoDescanso">Tiempo de descanso </label>
-            <input #tiempoDescanso type="text" required />
-            <hr />
-          </ion-label>
-          <ion-checkbox
-            slot="end"
-            [checked]="saberEjercicioSeleccionado(ejercicio)"
-            (ionChange)="
-              seleccionarEjercicio(
-                ejercicio,
-                repeticiones.value,
-                series.value,
-                tiempoDescanso.value,
-                $event.detail.checked
-              )
-            "
-          >
-          </ion-checkbox>
-        </ion-item>
-        <ion-button
-          color="success"
-          type="submit"
-          (click)="alertaRutinaCreada()"
-        >
+        <div class="div-cards">
+          <ion-card *ngFor="let ejercicio of ejercicios">
+            <ion-card-header>
+              <ion-card-title>{{ ejercicio.name }}</ion-card-title>
+              <ion-card-subtitle>Tipo: {{ ejercicio.type }}</ion-card-subtitle>
+            </ion-card-header>
+
+            <ion-card-content>
+              <p>Musculo que trabaja: {{ ejercicio.muscle }}</p>
+              <p>Dificultad: {{ ejercicio.difficulty }}</p>
+              <hr />
+              <label>Ingrese los siguientes datos</label>
+              <hr />
+              <label for="repeticiones">Repeticiones </label>
+              <input #repeticiones type="text" required />
+              <hr />
+              <label for="series">Series </label>
+              <input #series type="text" required />
+              <hr />
+              <label for="tiempoDescanso">Tiempo de descanso </label>
+              <input #tiempoDescanso type="text" required />
+              <hr />
+              <ion-checkbox
+                slot="end"
+                [checked]="saberEjercicioSeleccionado(ejercicio)"
+                (ionChange)="
+                  seleccionarEjercicio(
+                    ejercicio,
+                    repeticiones.value,
+                    series.value,
+                    tiempoDescanso.value,
+                    $event.detail.checked
+                  )
+                "
+              >
+              </ion-checkbox>
+            </ion-card-content>
+          </ion-card>
+        </div>
+        <ion-button type="submit" (click)="alertaRutinaCreada()">
           Guardar ejercicios seleccionados</ion-button
         >
       </form>

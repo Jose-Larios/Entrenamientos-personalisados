@@ -1,0 +1,84 @@
+// 🎨 Paleta
+$black: #000000;
+$blue-dark: #001f36;
+$blue-green: #1c5560;
+$green-soft: #79ae92;
+$yellow-light: #fbffcd;
+
+// 🔹 Toolbar minimalista
+ion-toolbar {
+  background: linear-gradient(135deg, $blue-dark, $blue-green);
+  color: $yellow-light;
+  border: none;
+
+  ion-title {
+    font-weight: 700;
+    font-size: 1.3rem;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+}
+
+ion-content {
+  --background: $blue-dark;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+}
+
+// 🔹 Card de perfil
+ion-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+
+  ion-card-header {
+    background: $blue-green;
+    color: $yellow-light;
+    padding: 16px;
+
+    ion-card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    ion-card-subtitle {
+      font-size: 0.9rem;
+      opacity: 0.9;
+    }
+  }
+
+  ion-card-content {
+    padding: 16px;
+
+    p {
+      margin: 10px 0;
+      font-size: 0.95rem;
+      color: $black;
+
+      b {
+        color: $blue-green;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+// 🔹 Mensaje sin usuario
+.no-user {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: $yellow-light;
+  opacity: 0.85;
+}

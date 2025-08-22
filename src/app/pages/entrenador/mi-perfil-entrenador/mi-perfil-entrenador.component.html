@@ -1,27 +1,29 @@
-<ion-toolbar>
-  <ion-title> Mi Perfil</ion-title>
+<ion-toolbar class="profile-toolbar">
+  <ion-title>Mi Perfil</ion-title>
 </ion-toolbar>
 
-<ion-content class="ion-padding">
+<ion-content class="profile-content ion-padding">
   <ng-container *ngIf="usuario; else noUser">
-    <ion-card>
+    <ion-card class="profile-card">
       <ion-card-header>
-        <ion-card-title
-          >Nombre: {{ usuario.nombre }} {{ usuario.apellidos }}</ion-card-title
-        >
-        <ion-card-subtitle>Correo: {{ usuario.correo }}</ion-card-subtitle>
+        <ion-card-title class="profile-name">
+          {{ usuario.nombre }} {{ usuario.apellidos }}
+        </ion-card-title>
+        <ion-card-subtitle class="profile-email">
+          {{ usuario.correo }}
+        </ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content>
-        <p><b>Edad:</b> {{ usuario.edad }}</p>
-        <p><b>Grado de estudios:</b> {{ usuario.gradoEstudio }}</p>
-        <p><b>universidad de procedencia:</b> {{ usuario.lugarEstudio }}</p>
-        <p><b>Teléfono:</b> {{ usuario.telefono }}</p>
+        <p><span>Edad:</span> {{ usuario.edad }}</p>
+        <p><span>Grado de estudios:</span> {{ usuario.gradoEstudio }}</p>
+        <p><span>Universidad:</span> {{ usuario.lugarEstudio }}</p>
+        <p><span>Teléfono:</span> {{ usuario.telefono }}</p>
       </ion-card-content>
     </ion-card>
   </ng-container>
 
   <ng-template #noUser>
-    <p>No hay usuario logueado</p>
+    <p class="no-user">No hay usuario logueado</p>
   </ng-template>
 </ion-content>

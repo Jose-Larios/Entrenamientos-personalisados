@@ -1,0 +1,79 @@
+// Paleta de colores
+$black: #000000;
+$blue-dark: #001f36;
+$blue-green: #1c5560;
+$green-soft: #79ae92;
+$yellow-light: #fbffcd;
+
+ion-content {
+  background: $black;
+  color: $yellow-light;
+  min-height: 100%;
+  padding: 16px;
+
+  ion-title {
+    display: block;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 12px 0 20px;
+    color: $yellow-light;
+    border-bottom: 2px solid $green-soft;
+    padding-bottom: 8px;
+  }
+}
+
+// Estilos del accordion
+ion-accordion-group {
+  background: transparent;
+}
+
+ion-accordion {
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba($black, 0.5);
+  background: $blue-green;
+  color: $yellow-light;
+
+  ion-item {
+    --background: $blue-dark;
+    --color: $yellow-light;
+    font-weight: 600;
+    border-bottom: 1px solid rgba($yellow-light, 0.2);
+  }
+
+  [slot="content"] {
+    background: $blue-green;
+    color: $yellow-light;
+
+    p {
+      font-size: 0.95rem;
+      margin: 6px 0;
+      line-height: 1.4;
+
+      span {
+        font-weight: bold;
+        color: $yellow-light;
+      }
+    }
+
+    ion-button {
+      --background: #002b34;
+      --background-activated: darken($green-soft, 10%);
+      --color: $blue-dark;
+      --border-radius: 10px;
+      margin: 8px 6px 0 0;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba($black, 0.4);
+
+      &:hover {
+        --background: lighten($green-soft, 5%);
+        --color: $yellow-light;
+        transform: scale(1.05);
+        transition: all 0.3s ease;
+        border-radius: 10px;
+      }
+    }
+  }
+}
