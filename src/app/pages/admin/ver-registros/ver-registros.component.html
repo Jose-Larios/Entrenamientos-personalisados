@@ -4,6 +4,7 @@
 <hr />
 
 <ion-content>
+  <!-- Administradores registrados -->
   <ion-title>Administradores registrados</ion-title>
   <ion-accordion-group expand="inset">
     <ion-accordion *ngFor="let admin of adminData" [value]="admin.nombre">
@@ -26,6 +27,7 @@
     </ion-accordion>
   </ion-accordion-group>
 
+  <!-- Entrenadores registrados -->
   <ion-title>Entrenadores registrados</ion-title>
   <ion-accordion-group expand="inset">
     <ion-accordion
@@ -55,6 +57,7 @@
     </ion-accordion>
   </ion-accordion-group>
 
+  <!-- Deportistas registrados -->
   <ion-title>Deportistas registrados</ion-title>
   <ion-accordion-group expand="inset">
     <ion-accordion

@@ -15,6 +15,7 @@ export class DeportistaComponent implements OnInit {
   ngOnInit() {}
 
   logout() {
+    // Borrar datos al cerrar la sesion
     localStorage.removeItem('usuario');
   }
 }

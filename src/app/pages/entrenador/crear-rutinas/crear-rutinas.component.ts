@@ -1,6 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
+import { IonicModule, AlertController } from '@ionic/angular';
 import { EntrenadoresService } from 'src/app/services/entrenadores';
 import { ActivatedRoute } from '@angular/router';
 import { FormsModule } from '@angular/forms';
@@ -14,7 +14,8 @@ import { FormsModule } from '@angular/forms';
 export class CrearRutinasComponent implements OnInit {
   constructor(
     private entrenadoresService: EntrenadoresService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private alertController: AlertController
   ) {}
   ejercicios: any[] = [];
   ejerciciosSeleccionados: any[] = [];
@@ -93,5 +94,14 @@ export class CrearRutinasComponent implements OnInit {
         // Resetear el formulario
         form.resetForm();
       });
+  }
+
+  // Alerta rutina creada
+  async alertaRutinaCreada() {
+    const alert = await this.alertController.create({
+      header: 'Rutina creada exitosamente',
+      buttons: ['Ok'],
+    });
+    await alert.present();
   }
 }

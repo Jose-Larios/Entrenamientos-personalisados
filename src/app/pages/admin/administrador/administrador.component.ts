@@ -14,6 +14,7 @@ export class AdministradorComponent implements OnInit {
 
   ngOnInit() {}
 
+  // Borrar datos al cerrar la sesion
   logout() {
     localStorage.removeItem('usuario');
   }

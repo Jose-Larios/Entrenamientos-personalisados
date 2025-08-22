@@ -3,9 +3,7 @@
 </ion-toolbar>
 
 <ion-content class="ion-padding">
-  <h5>Ejercicios disponible</h5>
-
-  <label>Elige el musculo que se trabajara</label>
+  <label>Elige el musculo que se trabajara </label>
   <select name="tipoEjercicio" id="tipoEjercicio" required>
     <option value="abdominals">Abs</option>
     <option value="abductors">Abductors</option>
@@ -24,7 +22,7 @@
     <option value="triceps">Triceps</option>
   </select>
   <hr />
-  <label>Seleccione el dia de la rutina</label>
+  <label>Seleccione el dia de la rutina </label>
   <select name="dia" id="dia" [(ngModel)]="dia">
     <option value="lunes">Lunes</option>
     <option value="martes">Martes</option>
@@ -38,19 +36,25 @@
 
   <ion-list>
     <div *ngIf="ejercicios.length > 0">
+      <h4>Ejercicio disponibles</h4>
+      <hr />
       <form #rutinaForm="ngForm" (ngSubmit)="crearRutina(rutinaForm)">
         <ion-item *ngFor="let ejercicio of ejercicios">
           <ion-label>
             <h2>{{ ejercicio.name }}</h2>
-            <p>{{ ejercicio.type }} - {{ ejercicio.muscle }}</p>
-            <p>{{ ejercicio.difficulty }}</p>
-            <label for="repeticiones">Repeticiones</label>
+            <p>Tipo: {{ ejercicio.type }}</p>
+            <p>Musculo que trabaja: {{ ejercicio.muscle }}</p>
+            <p>Dificultad: {{ ejercicio.difficulty }}</p>
+            <hr />
+            <h2>Ingrese los siguientes datos</h2>
+            <hr />
+            <label for="repeticiones">Repeticiones </label>
             <input #repeticiones type="text" required />
             <hr />
-            <label for="series">Series</label>
+            <label for="series">Series </label>
             <input #series type="text" required />
             <hr />
-            <label for="tiempoDescanso">Tiempo de descanso</label>
+            <label for="tiempoDescanso">Tiempo de descanso </label>
             <input #tiempoDescanso type="text" required />
             <hr />
           </ion-label>
@@ -69,8 +73,11 @@
           >
           </ion-checkbox>
         </ion-item>
-        <!-- (click)="alertUsuarioCreado()" -->
-        <ion-button color="success" type="submit">
+        <ion-button
+          color="success"
+          type="submit"
+          (click)="alertaRutinaCreada()"
+        >
           Guardar ejercicios seleccionados</ion-button
         >
       </form>

@@ -5,6 +5,7 @@
 
 <ion-content>
   <ion-list *ngIf="diasRutina.length; else noRutina">
+    <h4>Tu rutina se divide en estos dias</h4>
     <ion-accordion-group>
       <ion-accordion *ngFor="let rutina of diasRutina">
         <ion-item slot="header">

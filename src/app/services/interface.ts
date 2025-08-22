@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 
+// Interface de Admin
 export interface Admin {
   id: string;
   apellidos: string;
@@ -10,6 +11,7 @@ export interface Admin {
   telefono: number;
 }
 
+// Interface de Entrenadores
 export interface Entrenadores {
   id: string;
   apellidos: string;
@@ -22,6 +24,7 @@ export interface Entrenadores {
   telefono: number;
 }
 
+// Interface de Deportistas
 export interface Deportistas {
   id: string;
   activo: boolean;

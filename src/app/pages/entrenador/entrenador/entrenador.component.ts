@@ -13,7 +13,7 @@ export class EntrenadorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-
+  // Borrar datos al cerrar la sesion
   logout() {
     localStorage.removeItem('usuario');
   }

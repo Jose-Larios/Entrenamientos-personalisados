@@ -3,6 +3,11 @@
 </ion-toolbar>
 
 <ion-content>
+  <label
+    >Seleccione el ingrediente principal para decubrir las recetas
+    disponibles</label
+  >
+  <hr />
   <select name="ingredientePrincipal" id="ingredientePrincipal">
     <option value="chicken">Pollo</option>
     <option value="salmon">Salmon</option>
@@ -20,6 +25,7 @@
     <option value="walnuts">Nueces</option>
     <option value="carrot">Zanahoria</option>
   </select>
+  <hr />
   <ion-button (click)="cargarRecetas()">Cargar recetas</ion-button>
 
   <ion-list>
@@ -39,8 +45,25 @@
             <ng-template>
               <ion-content class="ion-padding">
                 <h3>{{ detalleReceta?.strMeal }}</h3>
-                <p>{{ detalleReceta?.strInstructions }}</p></ion-content
-              >
+                <h4>Ingredientes</h4>
+                <ul>
+                  <li>{{ detalleReceta?.strIngredient1 }}</li>
+                  <li>{{ detalleReceta?.strIngredient2 }}</li>
+                  <li>{{ detalleReceta?.strIngredient3 }}</li>
+                  <li>{{ detalleReceta?.strIngredient4 }}</li>
+                  <li>{{ detalleReceta?.strIngredient5 }}</li>
+                  <li>{{ detalleReceta?.strIngredient6 }}</li>
+                  <li>{{ detalleReceta?.strIngredient7 }}</li>
+                  <li>{{ detalleReceta?.strIngredient8 }}</li>
+                  <li>{{ detalleReceta?.strIngredient9 }}</li>
+                  <li>{{ detalleReceta?.strIngredient10 }}</li>
+                </ul>
+                <h4>Intrucciones</h4>
+                <p>{{ detalleReceta?.strInstructions }}</p>
+                <a [href]="detalleReceta?.strYoutube" target="_blank"
+                  >Ver preparacion</a
+                >
+              </ion-content>
             </ng-template>
           </ion-popover>
           <ion-checkbox
@@ -49,8 +72,8 @@
             (ionChange)="seleccionarReceta(receta, $event.detail.checked)"
           ></ion-checkbox>
         </ion-item>
-        <ion-button color="success" type="submit">
-          Guardar ejercicios seleccionados</ion-button
+        <ion-button color="success" type="submit" (click)="alertaDietaCreada()">
+          Guardar comidas seleccionados</ion-button
         >
       </form>
     </div>

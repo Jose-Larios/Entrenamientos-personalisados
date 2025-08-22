@@ -3,6 +3,7 @@
 </ion-toolbar>
 
 <ion-content class="ion-padding">
+  <h4>Estas son tus comidas recomendadas</h4>
   <ng-container *ngIf="recetas; else noDieta"></ng-container>
   <div *ngFor="let comida of recetas">
     <ion-card>
@@ -14,15 +15,21 @@
         >
       </ion-card-header>
       <ion-card-content>
-        Ingredientes: {{ comida.strIngredient1 }},{{ comida.strIngredient2 }},{{
-          comida.strIngredient3
-        }},{{ comida.strIngredient4 }},{{ comida.strIngredient5 }},{{
-          comida.strIngredient6
-        }},{{ comida.strIngredient7 }},{{ comida.strIngredient8 }},{{
-          comida.strIngredient9
-        }},{{ comida.strIngredient10 }}. Insturcciones:
-        {{ comida.strInstructions }}
-
+        <h4>Ingredientes</h4>
+        <ul>
+          <li>{{ comida.strIngredient1 }}</li>
+          <li>{{ comida.strIngredient2 }}</li>
+          <li>{{ comida.strIngredient3 }}</li>
+          <li>{{ comida.strIngredient4 }}</li>
+          <li>{{ comida.strIngredient5 }}</li>
+          <li>{{ comida.strIngredient6 }}</li>
+          <li>{{ comida.strIngredient7 }}</li>
+          <li>{{ comida.strIngredient8 }}</li>
+          <li>{{ comida.strIngredient9 }}</li>
+          <li>{{ comida.strIngredient10 }}</li>
+        </ul>
+        <h4>Instrucciones:</h4>
+        <p>{{ comida.strInstructions }}</p>
         <a [href]="comida.strYoutube" target="_blank"
           >Pulsa aca para ver un video:</a
         >

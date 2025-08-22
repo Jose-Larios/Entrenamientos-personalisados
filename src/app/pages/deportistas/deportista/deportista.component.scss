@@ -1,0 +1,53 @@
+:host {
+  ion-menu {
+    --background: #001f36;
+    --width: 240px;
+
+    ion-content {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 1.5rem;
+      gap: 1rem;
+    }
+
+    ion-button {
+      --background: #1c5560;
+      --color: #fbffcd;
+      --border-radius: 12px;
+      font-weight: 600;
+      width: 100%;
+      text-transform: none;
+      transition: 0.3s ease;
+
+      &:hover {
+        --background: #79ae92;
+        --color: #001f36;
+      }
+
+      &[color="danger"] {
+        --background: #b33939;
+        --color: #fbffcd;
+
+        &:hover {
+          --background: #ff5252;
+          --color: #000000;
+        }
+      }
+    }
+  }
+
+  ion-menu-button {
+    --color: #fbffcd;
+    --padding-start: 12px;
+    --padding-end: 12px;
+    font-size: 1.4rem;
+  }
+
+  .ion-page {
+    ion-content {
+      --background: #000000;
+      color: #fbffcd;
+    }
+  }
+}

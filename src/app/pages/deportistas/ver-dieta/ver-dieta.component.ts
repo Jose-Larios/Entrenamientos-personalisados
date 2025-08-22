@@ -10,17 +10,21 @@ import { DeportistaService } from 'src/app/services/deportista';
   imports: [CommonModule, IonicModule],
 })
 export class VerDietaComponent implements OnInit {
+  // Iniciando valores
   usuario: any = null;
   recetas: any = [];
 
   constructor(private deportistaService: DeportistaService) {}
 
   ngOnInit() {
+    // Obtenieno los datos del localStorage
     const data = localStorage.getItem('usuario');
     if (data) {
       this.usuario = JSON.parse(data);
     }
+    // Consiguiendo los id de los de las recetas
     const idRecetas = this.usuario.dieta.map((e: any) => e.idMeal);
+    // Obteniedno los detalles de las recetas
     idRecetas.forEach((id: any) => {
       this.deportistaService.getDataDetalleReceta(id).subscribe({
         next: (data) => {

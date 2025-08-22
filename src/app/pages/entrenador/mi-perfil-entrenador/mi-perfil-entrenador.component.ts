@@ -14,6 +14,7 @@ export class MiPerfilEntrenadorComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    // Obtenieno los datos del localStorage
     const data = localStorage.getItem('usuario');
     if (data) {
       this.usuario = JSON.parse(data);

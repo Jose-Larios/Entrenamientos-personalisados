@@ -36,7 +36,7 @@ export class DeportistaService {
       `${this.apiUrlRecetas}/filter.php?i=${ingredientePrincipal}`
     );
   }
-
+  // Obtener los datos themealDb (detalles)
   getDataDetalleReceta(idReceta: String): Observable<any> {
     return this.http.get(`${this.apiUrlRecetas}/lookup.php?i=${idReceta}`);
   }
