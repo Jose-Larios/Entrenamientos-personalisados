@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "209914747404",
+    "project_id": "aplicacion-fit",
+    "storage_bucket": "aplicacion-fit.appspot.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:209914747404:android:23a635f9d8f61187d42c29",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhqbAbzybJ23LFgqrMmYhLHXs-gvyEfa0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

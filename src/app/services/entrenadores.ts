@@ -8,6 +8,7 @@ import {
 } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+// Llamando environmet
 import { environment } from 'src/environments/environment';
 import { Deportistas } from './interface';
 

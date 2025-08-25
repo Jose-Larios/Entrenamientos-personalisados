@@ -116,48 +116,6 @@ ion-card {
   }
 }
 
-// 🔹 Popover de detalle receta
-ion-popover {
-  --background: $blue-dark;
-  --color: $yellow-light;
-  --backdrop-opacity: 0.6;
-
-  ion-content {
-    background: $blue-dark;
-    color: $yellow-light;
-
-    h3 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    h4 {
-      font-size: 1rem;
-      font-weight: 600;
-      margin: 10px 0 6px;
-      color: $green-soft;
-    }
-
-    ul {
-      margin: 0;
-      padding-left: 18px;
-
-      li {
-        margin: 4px 0;
-      }
-    }
-
-    a {
-      color: $green-soft;
-      font-weight: 600;
-      text-decoration: underline;
-      margin-top: 12px;
-      display: inline-block;
-    }
-  }
-}
-
 ion-button {
   --background: #002b34;
   --background-activated: darken($green-soft, 10%);
